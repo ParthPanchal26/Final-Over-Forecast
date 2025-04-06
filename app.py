@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 teams = [
     'Sunrisers Hyderabad',
@@ -23,7 +24,11 @@ cities = ['Bangalore', 'Chandigarh', 'Delhi', 'Mumbai', 'Kolkata', 'Jaipur',
           'Navi Mumbai', 'Guwahati', 'Mohali']
 
 
-pipe = pickle.load(open('./pipe.pkl', 'rb'))
+if os.path.exists("pipe.pkl"):
+    with open("pipe.pkl", "rb") as file:
+        pipe = pickle.load(file)
+else:
+    st.error("Model file not found. Please check deployment.")
 
 st.title("Final Over Forecast")
 st.text("A smart IPL match winning chance predictor")
