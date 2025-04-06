@@ -23,7 +23,7 @@ cities = ['Bangalore', 'Chandigarh', 'Delhi', 'Mumbai', 'Kolkata', 'Jaipur',
           'Navi Mumbai', 'Guwahati', 'Mohali']
 
 
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+pipe = pickle.load(open('./pipe.pkl', 'rb'))
 
 st.title("Final Over Forecast")
 st.text("A smart IPL match winning chance predictor")
